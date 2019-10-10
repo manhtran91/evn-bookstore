@@ -16,7 +16,7 @@ public class BookStoreAPI {
         return retrofit.create(UserService.class);
     }
 
-    public static ProductService getSalingService() {
+    public static ProductService getProductService() {
         return retrofit.create(ProductService.class);
     }
 }
