@@ -18,4 +18,18 @@ public class UserRequestBody {
                 okhttp3.MediaType.parse(Constant.Network.ApplicationJson),
                 params.toString());
     }
+
+    public static RequestBody buildSignUpRequestBody(
+            String phone, String pass, String displayName) {
+        JSONObject params = new JSONObject();
+        try {
+            params.put("phone", phone);
+            params.put("password", pass);
+            params.put("displayName", displayName);
+        } catch (Exception e){}
+
+        return RequestBody.create(
+                okhttp3.MediaType.parse(Constant.Network.ApplicationJson),
+                params.toString());
+    }
 }

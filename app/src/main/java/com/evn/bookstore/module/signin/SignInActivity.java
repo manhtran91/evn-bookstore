@@ -3,6 +3,7 @@ package com.evn.bookstore.module.signin;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.evn.bookstore.R;
 import com.evn.bookstore.base.BaseResponse;
 import com.evn.bookstore.model.User;
+import com.evn.bookstore.module.home.HomeActivity;
 import com.evn.bookstore.module.signup.SignUpActivity;
 
 public class SignInActivity extends AppCompatActivity {
@@ -20,6 +22,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText editPass;
     private Button btnSignIn;
     private TextView tvStatus;
+    private TextView tvSignUpNow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +33,22 @@ public class SignInActivity extends AppCompatActivity {
         editPass = findViewById(R.id.password);
         btnSignIn = findViewById(R.id.signIn);
         tvStatus = findViewById(R.id.signInStatus);
+        tvSignUpNow = findViewById(R.id.signUpNow);
+
+        tvSignUpNow.setPaintFlags(tvSignUpNow.getPaintFlags() |
+                Paint.UNDERLINE_TEXT_FLAG);
 
         signInPresenter = new SignInPresenter();
+
+        tvSignUpNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(
+                        SignInActivity.this,
+                        SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +69,7 @@ public class SignInActivity extends AppCompatActivity {
             public void onSignInSuccess(BaseResponse<User> data) {
                 Intent intent = new Intent(
                         SignInActivity.this,
-                        SignUpActivity.class);
+                        HomeActivity.class);
                 startActivity(intent);
             }
 
