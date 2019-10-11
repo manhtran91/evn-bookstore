@@ -27,6 +27,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        setTitle("Home");
+
         progressBar = findViewById(R.id.loading);
         recyclerView = findViewById(R.id.list);
 

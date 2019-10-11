@@ -29,6 +29,8 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        setTitle("Sign In");
+
         editPhone = findViewById(R.id.phone);
         editPass = findViewById(R.id.password);
         btnSignIn = findViewById(R.id.signIn);

@@ -31,6 +31,8 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        setTitle("Sign Up");
+
         signUpPresenter = new SignUpPresenter();
 
         editPhone = findViewById(R.id.phone);

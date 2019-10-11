@@ -13,7 +13,7 @@
         <activity android:name=".module.home.HomeActivity"></activity>
         <activity android:name=".module.signup.SignUpActivity" />
         <activity android:name=".module.signin.SignInActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

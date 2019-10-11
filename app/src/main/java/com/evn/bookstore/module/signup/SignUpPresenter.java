@@ -8,6 +8,7 @@ import com.evn.bookstore.network.BSResponse;
 import com.evn.bookstore.network.BookStoreAPI;
 import com.evn.bookstore.shared.SharedPrefsUtils;
 import com.evn.bookstore.shared.UserRequestBody;
+import com.google.gson.Gson;
 
 public class SignUpPresenter {
     public interface SignUpResponseListener {
@@ -27,6 +28,9 @@ public class SignUpPresenter {
                     public void onData(BaseResponse<User> response) {
                         SharedPrefsUtils.setStringPreference(BookStoreApp.getApp(),
                                 Constant.Spref.KEY_TOKEN, response.data.token);
+
+                        SharedPrefsUtils.setStringPreference(BookStoreApp.getApp(),
+                                Constant.Spref.KEY_USER, new Gson().toJson(response.data));
 
                         listener.onSignUpSuccess(response);
                     }

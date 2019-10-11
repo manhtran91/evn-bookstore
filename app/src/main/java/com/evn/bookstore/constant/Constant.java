@@ -7,6 +7,7 @@ public class Constant {
 
     public abstract class Spref {
         public static final String KEY_TOKEN = "token";
+        public static final String KEY_USER = "user";
     }
 
 
