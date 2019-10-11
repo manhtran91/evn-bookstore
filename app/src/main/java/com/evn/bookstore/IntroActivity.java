@@ -11,6 +11,7 @@ import com.evn.bookstore.model.User;
 import com.evn.bookstore.module.home.HomeActivity;
 import com.evn.bookstore.module.signin.SignInActivity;
 import com.evn.bookstore.module.signup.SignUpActivity;
+import com.evn.bookstore.module.upload.UploadActivity;
 import com.evn.bookstore.shared.SharedPrefsUtils;
 import com.google.gson.Gson;
 
@@ -32,7 +33,7 @@ public class IntroActivity extends AppCompatActivity {
                 if (user != null) {
                     intent = new Intent(
                             IntroActivity.this,
-                            HomeActivity.class);
+                            UploadActivity.class);
                 } else {
                     intent = new Intent(
                             IntroActivity.this,

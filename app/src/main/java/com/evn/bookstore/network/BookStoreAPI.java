@@ -1,6 +1,7 @@
 package com.evn.bookstore.network;
 
 import com.evn.bookstore.network.service.ProductService;
+import com.evn.bookstore.network.service.UploadService;
 import com.evn.bookstore.network.service.UserService;
 
 import okhttp3.OkHttpClient;
@@ -25,5 +26,9 @@ public class BookStoreAPI {
 
     public static ProductService getProductService() {
         return retrofit.create(ProductService.class);
+    }
+
+    public static UploadService getUploadService() {
+        return retrofit.create(UploadService.class);
     }
 }
