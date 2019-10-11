@@ -70,6 +70,7 @@ public class SignUpActivity extends AppCompatActivity {
                                         SignUpActivity.this,
                                         HomeActivity.class);
                                 startActivity(intent);
+                                finish();
                             }
 
                             @Override

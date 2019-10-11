@@ -5,7 +5,9 @@ public class Constant {
         public static final String ApplicationJson = "application/json; charset=utf-8";
     }
 
-    public abstract class User {
-
+    public abstract class Spref {
+        public static final String KEY_TOKEN = "token";
     }
+
+
 }

@@ -10,5 +10,5 @@ public class BaseResponse<T> {
     public String message;
 
     @SerializedName("data")
-    T data;
+    public T data;
 }

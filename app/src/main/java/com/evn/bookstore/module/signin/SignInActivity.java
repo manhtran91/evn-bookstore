@@ -71,6 +71,7 @@ public class SignInActivity extends AppCompatActivity {
                         SignInActivity.this,
                         HomeActivity.class);
                 startActivity(intent);
+                finish();
             }
 
             @Override

@@ -1,10 +1,14 @@
 package com.evn.bookstore.module.signin;
 
+import android.app.Activity;
+
+import com.evn.bookstore.BookStoreApp;
 import com.evn.bookstore.base.BaseResponse;
 import com.evn.bookstore.constant.Constant;
 import com.evn.bookstore.model.User;
 import com.evn.bookstore.network.BSResponse;
 import com.evn.bookstore.network.BookStoreAPI;
+import com.evn.bookstore.shared.SharedPrefsUtils;
 import com.evn.bookstore.shared.UserRequestBody;
 import com.google.gson.JsonObject;
 
@@ -16,6 +20,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SignInPresenter {
+
     public interface SignInResponseListener {
         void onSignInSuccess(BaseResponse<User> data);
         void onSignFail(Throwable t);
@@ -29,8 +34,11 @@ public class SignInPresenter {
                 .signIn(UserRequestBody.buildSignInRequestBody(phone, password))
                 .enqueue(new BSResponse<BaseResponse<User>>() {
                     @Override
-                    public void onData(BaseResponse<User> data) {
-                        listener.onSignInSuccess(data);
+                    public void onData(BaseResponse<User> response) {
+                        SharedPrefsUtils.setStringPreference(BookStoreApp.getApp(),
+                                Constant.Spref.KEY_TOKEN, response.data.token);
+
+                        listener.onSignInSuccess(response);
                     }
 
                     @Override

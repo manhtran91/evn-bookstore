@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this,
                         SignInActivity.class);
                 startActivity(intent);
+                finish();
             }
         }, 2000);
 
