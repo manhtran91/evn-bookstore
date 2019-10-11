@@ -15,6 +15,18 @@ import com.google.gson.annotations.SerializedName;
  *             "updatedAt": "2019-09-05T22:18:58.580032+07:00"
  */
 public class Product {
+    @SerializedName("productId")
+    public String productId;
+
     @SerializedName("productName")
     public String productName;
+
+    @SerializedName("productImage")
+    public String productImage;
+
+    @SerializedName("quantity")
+    public int quantity;
+
+    @SerializedName("price")
+    public long price;
 }

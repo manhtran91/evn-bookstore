@@ -16,7 +16,7 @@ public class BSIntercepter implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request originalRequest = chain.request();
 
-        /*String token = SharedPrefsUtils.getStringPreference(
+        String token = SharedPrefsUtils.getStringPreference(
                 BookStoreApp.getApp(), Constant.Spref.KEY_TOKEN);
         if (token != null) {
             String authString = String.format("Bearer %s", token);
@@ -29,7 +29,7 @@ public class BSIntercepter implements Interceptor {
                     .build();
 
             return chain.proceed(newRequest);
-        }*/
+        }
 
         return chain.proceed(originalRequest);
 
